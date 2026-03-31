@@ -1,6 +1,7 @@
 import React from "react";
 import { Play } from "lucide-react";
 import bannerImage from "../../assets/images/banner.png";
+import CircleLogo from "../CircleLogo";
 
 const Hero = () => {
   return (
@@ -11,8 +12,9 @@ const Hero = () => {
           <div className="flex flex-col space-y-6 lg:space-y-8">
             {/* Badge */}
             <div className="inline-flex w-fit">
-              <span className="px-4 py-2 bg-purple-100 text-purple-600 text-sm font-semibold rounded-full">
-                ✨ New: AI-Powered Tools Available
+              <span className="flex items-center px-4 py-2 gap-1 bg-purple-100 text-purple-600 text-sm font-semibold rounded-full space-x-2">
+                <CircleLogo />
+                <span>New: AI-Powered Tools Available</span>
               </span>
             </div>
 
@@ -23,8 +25,9 @@ const Hero = () => {
 
             {/* Paragraph */}
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-              Access premium AI tools, design assets, templates, and productivity
-              software—all in one place. Start creating faster today.
+              Access premium AI tools, design assets, templates, and
+              productivity software—all in one place. Start creating faster
+              today.
             </p>
 
             {/* Buttons */}

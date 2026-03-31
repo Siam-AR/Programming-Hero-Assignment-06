@@ -7,6 +7,7 @@ import Stats from "./components/Stats/Stats";
 import Steps from "./components/Steps/Steps";
 import PurchasePage from "./pages/PurchasePage";
 import { CartProvider } from "./context/CartContext";
+import CircleLogo from "./components/CircleLogo";
 
 function App() {
   return (
