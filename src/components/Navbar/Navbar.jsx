@@ -1,7 +1,9 @@
 import React from "react";
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "../../context/CartContext";
 
-const Navbar = ({ cartCount = 0 }) => {
+const Navbar = () => {
+  const { cartCount } = useCart();
   return (
     <div className="w-full border-b border-gray-300 bg-white">
       <div className="w-10/12 mx-auto relative flex items-center justify-between px-8 py-3 text-gray-900">

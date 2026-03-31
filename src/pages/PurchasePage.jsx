@@ -4,35 +4,34 @@ import ProductCard from "../components/PurchasePage/ProductCard";
 import CartItem from "../components/PurchasePage/CartItem";
 import Tabs from "../components/PurchasePage/Tabs";
 import productsData from "../data/products.json";
+import { useCart } from "../context/CartContext";
 
 const PurchasePage = () => {
-  // State management
+  // Tab state (local to this component)
   const [activeTab, setActiveTab] = useState("products"); // 'products' or 'cart'
-  const [cart, setCart] = useState([]); // Array of products in cart
 
-  // Add product to cart (prevent duplicates)
+  // Get cart state and functions from context
+  const {
+    cart,
+    cartCount,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    isProductInCart,
+    totalPrice,
+  } = useCart();
+
+  // Handlers
   const handleAddToCart = (product) => {
-    if (!cart.find((item) => item.id === product.id)) {
-      setCart([...cart, product]);
-    }
+    addToCart(product);
   };
 
-  // Remove product from cart
   const handleRemoveFromCart = (productId) => {
-    setCart(cart.filter((item) => item.id !== productId));
+    removeFromCart(productId);
   };
 
-  // Checkout: Clear cart
   const handleCheckout = () => {
-    setCart([]);
-  };
-
-  // Calculate total price
-  const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
-
-  // Check if product is already in cart
-  const isProductInCart = (productId) => {
-    return cart.some((item) => item.id === productId);
+    clearCart();
   };
 
   return (
@@ -53,7 +52,7 @@ const PurchasePage = () => {
         <Tabs
           activeTab={activeTab}
           onTabChange={setActiveTab}
-          cartCount={cart.length}
+          cartCount={cartCount}
         />
 
         {/* Products Tab */}
