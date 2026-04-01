@@ -5,6 +5,7 @@ import Stats from "./components/Stats/Stats";
 import Steps from "./components/Steps/Steps";
 import PurchasePage from "./pages/PurchasePage";
 import Pricing from "./components/Pricing/Pricing";
+import FooterCTA from "./components/FooterCTA/FooterCTA";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <PurchasePage></PurchasePage>
       <Steps></Steps>
       <Pricing></Pricing>
+      <FooterCTA></FooterCTA>
     </div>
   );
 }
