@@ -2,6 +2,7 @@ import "./App.css";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Stats from "./components/Stats/Stats";
+import Steps from "./components/Steps/Steps";
 import PurchasePage from "./pages/PurchasePage";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Hero></Hero>
       <Stats></Stats>
       <PurchasePage></PurchasePage>
+      <Steps></Steps>
     </div>
   );
 }
